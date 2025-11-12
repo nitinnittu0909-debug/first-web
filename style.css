@@ -1,0 +1,141 @@
+@import url('');
+
+:root {
+  --bg: #080006;
+  --glass: rgba(255, 255, 255, 0.06);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Loved by the King', 'Noto Color Emoji', cursive;
+  color: #fff;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  transform: rotate(-45deg);
+  opacity: 0.6;
+}
+.heart:before,
+.heart:after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 50, 120, 0.1);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.heart:before { top: -6px; }
+.heart:after { left: 6px; }
+
+.panel {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px 20px;
+  border-radius: 16px;
+  min-width: 220px;
+  max-width: 460px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  transition: opacity .8s ease, transform .8s ease;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+h1 {
+  font-size: 22px;
+  margin: 4px 0 8px;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+}
+
+p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.btns {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-yes {
+  background: rgba(255, 100, 150, 0.12);
+}
+
+.watermark {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  text-align: center;
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+.toast-wrap {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.toast {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.insta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
